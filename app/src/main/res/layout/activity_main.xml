@@ -12,7 +12,8 @@
         android:id="@+id/startBtn"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="startVideo"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -21,7 +22,8 @@
         android:id="@+id/stopBtn"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="stopVideo"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,9 +39,10 @@
         android:layout_height="wrap_content"
         android:text="@string/Error"
         android:id="@+id/errorTxt"
-        android:layout_alignBottom="@+id/stopBtn"
-        android:layout_toLeftOf="@+id/stopBtn"
-        android:layout_toStartOf="@+id/stopBtn" />
+        android:visibility="invisible"
+        android:layout_below="@+id/surfaceView"
+        android:layout_toRightOf="@+id/startBtn"
+        android:layout_toEndOf="@+id/startBtn" />
 
     <SurfaceView
         android:layout_width="wrap_content"
@@ -55,8 +58,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
+        android:text="@string/Valence"
         android:id="@+id/facialValenceTxt"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_toLeftOf="@+id/stopBtn"
+        android:layout_toStartOf="@+id/stopBtn" />
 </RelativeLayout>
