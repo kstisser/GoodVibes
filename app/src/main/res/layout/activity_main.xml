@@ -27,8 +27,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/timeElapsed"
-        android:id="@+id/textView"
+        android:id="@+id/timeTxt"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/startBtn"
         android:layout_toEndOf="@+id/startBtn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Error"
+        android:id="@+id/errorTxt"
+        android:layout_alignBottom="@+id/stopBtn"
+        android:layout_toLeftOf="@+id/stopBtn"
+        android:layout_toStartOf="@+id/stopBtn" />
+
+    <SurfaceView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/surfaceView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/startBtn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/facialValenceTxt"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
