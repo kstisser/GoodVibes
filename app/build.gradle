@@ -5,6 +5,7 @@ android {
     buildToolsVersion "23.0.0 rc2"
 
     defaultConfig {
+        //applicationId "affectiva.apps.hackathon.goodvibes"
         applicationId "band.man.your.goodvibes"
         minSdkVersion 16
         targetSdkVersion 22
