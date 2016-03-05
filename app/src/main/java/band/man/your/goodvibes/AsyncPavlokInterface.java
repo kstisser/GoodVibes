@@ -13,6 +13,13 @@ import javax.net.ssl.HttpsURLConnection;
  Level: 1-255
  new AsyncPavlokInterface(String Stimulus, String Level).execute();
 
+This two lines are required  in the on create method of  the main activity:
+    
+StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+StrictMode.setThreadPolicy(policy);
+ 
+ 
+ 
  */
 
 
