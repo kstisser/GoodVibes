@@ -2,6 +2,7 @@ package band.man.your.goodvibes;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.hardware.Camera;
 import android.util.Log;
 import android.view.SurfaceView;
@@ -36,7 +37,8 @@ public class Cam implements Detector.ImageListener{
         camDetector.setDetectValence(true);
         //switching from front to back
         //camDetector.setOnCameraEventListener(context);
-
+        //int happy = 0;
+        //int total = 0;
     }
 
     @Override
@@ -49,10 +51,25 @@ public class Cam implements Detector.ImageListener{
             Face face = list.get(0);
             float facialValenceValue = face.emotions.getValence();
             MainActivity.facialValence.setText(Float.toString(facialValenceValue));
+            if(facialValenceValue > 40){
+                new AsyncPavlokInterface("vibrate", "100").execute();
+                MainActivity.happy = MainActivity.happy + 1;
+            }
+            MainActivity.total = MainActivity.total + 1;
+            if(facialValenceValue >=0) {
+                MainActivity.colorMood.setBackgroundColor(Color.rgb(0,(Math.round(facialValenceValue/100*255)),0));
+            }
+            else{
+                MainActivity.colorMood.setBackgroundColor(Color.rgb((Math.round(facialValenceValue/100*255)),0,0));
+            }
+
         }
     }
 
     void startDetector() {
+        //plot.clearData();
+        MainActivity.happy = 0;
+        MainActivity.total = 0;
         if (!camDetector.isRunning()) {
             Log.w("GoodVibes","Starting camera detector");
             camDetector.start();
@@ -63,6 +80,8 @@ public class Cam implements Detector.ImageListener{
     void stopDetector() {
         if (camDetector.isRunning()) {
             camDetector.stop();
+            int percentage = 100*(MainActivity.happy)/(MainActivity.total);
+            MainActivity.percentageTxt.setText(Integer.toString(percentage) + "%");
         }
     }
 

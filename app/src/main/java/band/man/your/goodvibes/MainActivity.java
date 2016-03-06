@@ -1,5 +1,7 @@
 package band.man.your.goodvibes;
 
+import android.content.Context;
+import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,6 +9,7 @@ import android.view.MenuItem;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -15,6 +18,11 @@ public class MainActivity extends ActionBarActivity {
     public static TextView ErrorTxt;
     public static SurfaceView surfaceView;
     public static TextView facialValence;
+    public static ImageView colorMood;
+    public static int happy;
+    public static int total;
+    public static TextView percentageTxt;
+    SurfaceView graphView;
     Button startBtn;
     Button stopBtn;
     Cam camera;
@@ -23,13 +31,18 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         ErrorTxt = (TextView)findViewById(R.id.errorTxt);
         surfaceView = (SurfaceView)findViewById(R.id.surfaceView);
+        surfaceView.getHolder().setFixedSize(1,1);
         startBtn = (Button)findViewById(R.id.startBtn);
         stopBtn = (Button)findViewById(R.id.stopBtn);
         facialValence = (TextView)findViewById(R.id.facialValenceTxt);
         camera = new Cam(this, surfaceView);
+        colorMood = (ImageView)findViewById(R.id.colorView);
+        percentageTxt = (TextView)findViewById(R.id.timeTxt);
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
     }
 

@@ -28,11 +28,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/timeElapsed"
+        android:text="Percentage"
         android:id="@+id/timeTxt"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/startBtn"
-        android:layout_toEndOf="@+id/startBtn" />
+        android:layout_above="@+id/stopBtn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="@dimen/font_size"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,19 +49,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/surfaceView"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/startBtn"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/timeTxt"
+        android:layout_alignParentTop="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Valence"
         android:id="@+id/facialValenceTxt"
+        android:layout_above="@+id/startBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="@dimen/font_size"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/colorView"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/stopBtn"
-        android:layout_toStartOf="@+id/stopBtn" />
+        android:layout_alignTop="@+id/stopBtn"
+        android:layout_alignLeft="@+id/errorTxt"
+        android:layout_alignStart="@+id/errorTxt" />
+
 </RelativeLayout>

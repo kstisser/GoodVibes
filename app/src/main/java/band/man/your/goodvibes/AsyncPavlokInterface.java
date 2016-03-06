@@ -1,4 +1,5 @@
-package me.alejandromera.smstest;
+package band.man.your.goodvibes;
+
 import android.os.AsyncTask;
 import java.io.IOException;
 import java.net.MalformedURLException;
